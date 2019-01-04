@@ -1,3 +1,16 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+%text-standard {font-size: 15px; text-decoration: none; color: black; text-transform: none;}
+
+nav { position: relative; float: right; margin-right: 20px;
+  ul{ float: left;
+    li{ display: inline; margin-left: 10px;
+      a{@extend %text-standard;}
+    }
+  }
+}
+footer {position: fixed; bottom: 0;}
+.head-background {font-style: normal; background-color: lightgrey; position: relative; display: block; margin-left: auto; text-align: center; padding: 40px;z-index:-9;margin: 0;}
+.background-img {position: absolute; width: 100vw;}
