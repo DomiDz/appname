@@ -2,15 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-%text-standard {font-size: 15px; text-decoration: none; color: black; text-transform: none;}
+%text-standard { font-family: 'Open Sans', sans-serif; font-size: 20px; text-decoration: none; color: #ececec; text-transform: none;}
+%h-standard {font-family: 'Varela Round', sans-serif; text-decoration: none; text-transform: none;}
+%footer-standard {position: fixed; bottom: 0; height: 30px;background-color: #ececec; z-index: -1;}
+%btn {position: absolute; width: calc(50vw - 50px); height: 100px; z-index: 10; bottom: 30%;}
+%btnhover {background-color: #fcf7f1; transition: 700ms;}
 
-nav { position: relative; float: right; margin-right: 20px;
+// welcomescreen setting
+#welcome{z-index: 999999;}
+#logo_start{display: none; opacity: 0;}
+
+// overall settings
+
+body{background-color: #fcf7f1;}
+
+
+h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
+h2 {@extend %text-standard; font-size: 40pt; color: #eccba7;}
+h3 {@extend %h-standard; font-size: 17pt; letter-spacing:0; color: #ececec}
+
+p {@extend %text-standard;}
+
+nav { position: fixed; top: 0; float: right; margin-right: 100px; z-index: 999999999;
   ul{ float: left;
     li{ display: inline; margin-left: 10px;
       a{@extend %text-standard;}
     }
   }
 }
-footer {position: fixed; bottom: 0;}
-.head-background {font-style: normal; background-color: lightgrey; position: relative; display: block; margin-left: auto; text-align: center; padding: 40px;z-index:-9;margin: 0;}
-.background-img {position: absolute; width: 100vw;}
+
+#Home {position: relative;}
+
+.myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;}
+.mydescription { position: absolute; bottom: calc(30% + 100px);right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("background-pattern.png");
+h2 { margin-top: 20%; margin-right: 10%; float: right;}
+h3 {float: right; margin-right: 10%}
+}
+
+.productbtn{@extend %btn; left: 0;background-color: #887762;
+h1 {float: right; margin-right: 30px; margin-top: 30px;}
+}
+
+.productbtn:hover {@extend %btnhover; h1{color:#887762;}}
+.photobtn:hover {@extend %btnhover; bottom: 60%; h1{color: #4b7d8d;}}
+
+.photobtn{@extend %btn; right: 0; background-color:#4b7d8d;
+h1 {margin-left: 30px; margin-top: 30px;}
+}
+.product-design{position: absolute; bottom: 30px; margin-left: 100px; width: calc(50vw - 150px); height: 30%; z-index: 5; background-image: image-url("back-product.png"); background-size: cover;}
+.photography{position: absolute; bottom: 30px;right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 30%; background-image: image-url("back-photo.png"); background-size: cover; z-index: 5;}
+
+
+
+footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215;
+  p{@extend %footer-standard; right:100px; color:#0b1215; font-size: 15px; margin-bottom: -4px;}
+}
