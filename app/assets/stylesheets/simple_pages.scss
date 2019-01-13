@@ -4,12 +4,12 @@
 
 %text-standard { font-family: 'Open Sans', sans-serif; font-size: 20px; text-decoration: none; color: #ececec; text-transform: none;}
 %h-standard {font-family: 'Varela Round', sans-serif; text-decoration: none; text-transform: none;}
-%footer-standard {position: fixed; bottom: 0; height: 30px;background-color: #ececec; z-index: -1;}
+%footer-standard {position: fixed; bottom: 0; height: 30px;}
 %btn {position: absolute; width: calc(50vw - 50px); height: 100px; z-index: 10; bottom: 30%;}
 %btnhover {background-color: #fcf7f1; transition: 700ms;}
 
 // welcomescreen setting
-#welcome{z-index: 999999;}
+#welcome{z-index: 3;}
 #logo_start{display: none; opacity: 0;}
 
 // overall settings
@@ -23,15 +23,15 @@ h3 {@extend %h-standard; font-size: 17pt; letter-spacing:0; color: #ececec}
 
 p {@extend %text-standard;}
 
-nav { position: fixed; top: 0; float: right; margin-right: 100px; z-index: 999999999;
+nav { position: fixed; top: 0; float: right; margin-right: 100px; z-index: 2;
   ul{ float: left;
-    li{ display: inline; margin-left: 10px;
+    li{ display: inline; margin-left: 10px; :hover{text-decoration: none; color: #0b1215; }
       a{@extend %text-standard;}
     }
   }
 }
 
-#Home {position: relative;}
+#Home {position: relative; z-index: 1;}
 
 .myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;}
 .mydescription { position: absolute; bottom: calc(30% + 100px);right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("background-pattern.png");
@@ -54,6 +54,8 @@ h1 {margin-left: 30px; margin-top: 30px;}
 
 
 
-footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215;
+footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2;
+  #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px; :hover{color: white;}}
   p{@extend %footer-standard; right:100px; color:#0b1215; font-size: 15px; margin-bottom: -4px;}
+  #impressum {margin-left: 100px; color: #0b1215;}:hover{text-decoration: none;}
 }

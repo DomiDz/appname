@@ -24,6 +24,9 @@
     </nav>
     <%= yield %>
     <footer>
+        <%= link_to 'Impressum', simple_pages_contact_path,  :id => 'impressum'%>
+        <%= link_to 'Datenschutz', simple_pages_contact_path, :id => 'a'%>
+        <%= link_to 'Kontakt', simple_pages_contact_path,  :id => 'a'%>
       <p>&copy; Dominik Dziamski</p>
     </footer>
   </body>
