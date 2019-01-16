@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-%text-standard { font-family: 'Open Sans', sans-serif; font-size: 20px; text-decoration: none; color: #ececec; text-transform: none;}
+%text-standard { font-family: 'Open Sans', sans-serif; font-size: 20px; text-decoration: none; color: #4b7d8d; text-transform: none;} //mediaquery
 %h-standard {font-family: 'Varela Round', sans-serif; text-decoration: none; text-transform: none;}
-%footer-standard {position: fixed; bottom: 0; height: 30px;}
-%btn {position: absolute; width: calc(50vw - 50px); height: 100px; z-index: 10; bottom: 30%;}
+%footer-standard {position: fixed; bottom: 0; height: 30px;} //mediaquery
+%btn {position: absolute; width: calc(50vw - 50px); height: 100px; z-index: 10; bottom: 30%;} //mediaquery
 %btnhover {background-color: #fcf7f1; transition: 700ms;}
 
 // welcomescreen setting
@@ -14,48 +14,165 @@
 
 // overall settings
 
-body{background-color: #fcf7f1;}
+// MENU
 
+$color: #ececec;
+$ndcolor: #4b7d8d;
 
-h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
-h2 {@extend %text-standard; font-size: 40pt; color: #eccba7;}
-h3 {@extend %h-standard; font-size: 17pt; letter-spacing:0; color: #ececec}
+$height-icon: 20px;
+$width-line: 35px;
+$height-line: 4px;
 
-p {@extend %text-standard;}
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
 
-nav { position: fixed; top: 0; float: right; margin-right: 100px; z-index: 2;
-  ul{ float: left;
-    li{ display: inline; margin-left: 10px; :hover{text-decoration: none; color: #0b1215; }
-      a{@extend %text-standard;}
+#hamburger-icon {
+  width:$width-line;
+  height:$height-icon;
+  position:relative;
+  display:block;
+  margin-top: 2px;      //mediaquery
+  margin-left: 10px;    //mediaquery
+  // margin: ($height-icon * 2) auto $height-icon auto;
+
+  .line {
+    display:block;
+    background:$color;
+    width:$width-line;
+    height:$height-line;
+    position:absolute;
+    left:0;
+    border-radius:($height-line / 2);
+    transition: all $transition-time;
+    -webkit-transition: all $transition-time;
+    -moz-transition: all $transition-time;
+
+    &.line-1 {
+      top:0;
+    }
+    &.line-2 {
+      top:50%;
+    }
+    &.line-3 {
+      top:100%;
+    }
+  }
+  &:hover, &:focus {
+     .line-1 {
+        transform: translateY($height-line / 2 * -1);
+        -webkit-transform: translateY($height-line / 2 * -1);
+        -moz-transform: translateY($height-line / 2 * -1);
+     }
+    .line-3 {
+        transform: translateY($height-line / 2);
+        -webkit-transform: translateY($height-line / 2);
+        -moz-transform: translateY($height-line / 2);
+    }
+  }
+  &.active {
+    .line-1 {
+      background: $ndcolor;
+      transform: translateY($translateY) translateX($translateX) rotate($rotation);
+      -webkit-transform: translateY($translateY) translateX($translateX) rotate($rotation);
+      -moz-transform: translateY($translateY) translateX($translateX) rotate($rotation);
+    }
+    .line-2 {
+      opacity:0;
+    }
+    .line-3 {
+      background: $ndcolor;
+      transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      -webkit-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      -moz-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
     }
   }
 }
 
-#Home {position: relative; z-index: 1;}
+h1 {
+  text-transform:uppercase;
+}
+a {
+  text-decoration:none;
+  color:#95a5a6;
+  display:inline-block;
+  &:hover, &:focus {
+    color:$color;
+  }
+}
 
-.myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;}
-.mydescription { position: absolute; bottom: calc(30% + 100px);right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("background-pattern.png");
-h2 { margin-top: 20%; margin-right: 10%; float: right;}
-h3 {float: right; margin-right: 10%}
+body{background-color: #fcf7f1;}
+
+
+h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
+h2 {@extend %text-standard; font-size: 23pt; color: #eccba7;} //mediaquery
+h3 {@extend %h-standard; font-size: 12.84pt; letter-spacing:0; color: #ececec} //mediaquery
+
+p {@extend %text-standard;}
+
+nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2; padding: unset !important; //mediaquery
+  ul{ float: left; display: none;
+    li{ display: inline; margin-left: 10px; :hover{text-decoration: none; color: #887762; }
+      a{@extend %text-standard;}
+    }
+  }
+}
+.nav {display: block !important;}
+
+#Home {position: relative; z-index: 1; height: 100vh; width: 100vw; }
+
+.photobtn, .photography {transition: height 0.6s,bottom 0.6s;}
+
+.myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;}//mediaquery
+.mydescription { position: absolute; bottom: calc(30% + 100px);right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 50%; z-index: 4; background-image: image-url("background-pattern.png");//mediaquery
+h2 { margin-top: 20%; margin-right: 10%; float: right;}//mediaquery
+h3 {float: right; margin-right: 10%; margin-left: 143px;}//mediaquery
 }
 
 .productbtn{@extend %btn; left: 0;background-color: #887762;
-h1 {float: right; margin-right: 30px; margin-top: 30px;}
+h1 {float: right; margin-right: 30px; margin-top: 30px;}//mediaquery
 }
 
-.productbtn:hover {@extend %btnhover; h1{color:#887762;}}
-.photobtn:hover {@extend %btnhover; bottom: 60%; h1{color: #4b7d8d;}}
+.productbtnhover {@extend %btnhover; h1{color:#887762;}}
+.photobtnhover {@extend %btnhover; h1{color: #4b7d8d;}}
 
 .photobtn{@extend %btn; right: 0; background-color:#4b7d8d;
-h1 {margin-left: 30px; margin-top: 30px;}
+h1 {margin-left: 30px; margin-top: 30px;}//mediaquery
 }
-.product-design{position: absolute; bottom: 30px; margin-left: 100px; width: calc(50vw - 150px); height: 30%; z-index: 5; background-image: image-url("back-product.png"); background-size: cover;}
-.photography{position: absolute; bottom: 30px;right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 30%; background-image: image-url("back-photo.png"); background-size: cover; z-index: 5;}
+.product-design{position: absolute; bottom: 30px; margin-left: 100px; width: calc(50vw - 150px); height: 30%; z-index: 5; background-image: image-url("back-product.png"); background-size: cover;}//mediaquery
+.photography{position: absolute; bottom: 30px;right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 30%; background-image: image-url("back-photo.png"); background-size: cover; z-index: 5;}//mediaquery
 
 
 
-footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2;
-  #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px; :hover{color: white;}}
-  p{@extend %footer-standard; right:100px; color:#0b1215; font-size: 15px; margin-bottom: -4px;}
-  #impressum {margin-left: 100px; color: #0b1215;}:hover{text-decoration: none;}
+footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2; background-color: #fcf7f1;
+  #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px; :hover{color: white;}}//mediaquery
+  p{@extend %footer-standard; right:100px; color:#0b1215; font-size: 15px; margin-bottom: -4px;}//mediaquery
+  #impressum {margin-left: 100px; color: #0b1215;}:hover{text-decoration: none;}//mediaquery
+}
+
+
+@media (max-width: 1200px){
+  nav {top: 21px; margin-right: 65px;
+    ul{li{a{font-size: 16px;}}}
+  }
+  .mydescription{margin-right:65px; width: calc(50vw - 80px); height: 43%;
+    h2{ text-align: right; margin-top: 18%; font-size: 20px;}
+    h3{font-size: 14.9px;}
+  }
+  .myphoto { margin-left: 65px; width: calc(50vw - 80px); height: 43%;}
+  .photobtn, .productbtn  {width: calc(50vw - 15px);
+   h1 {font-size: 28pt;}
+  }
+  .photography {width: calc(50vw - 80px); margin-right: 65px;}
+  .product-design {width: calc(50vw - 80px); margin-left: 65px;}
+
+  footer{
+    p{right: 65px;}
+    #impressum { margin-left: 65px;}
+  }
+}
+
+@media (max-width: 1000px){
+
 }

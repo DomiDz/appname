@@ -18,14 +18,11 @@ window.onload = function welcomeSize () {
     var wrap = document.getElementById('wrap');
     wrap.style.paddingTop = height / 4 + 'px';
     wrap.style.paddingLeft = (width / 2) - logoWidth / 2 + 'px';
+
+    document.getElementById('footer').style.height = '0px';
 };
 
-window.onresize = function homeSite (){
-  var home = document.getElementById("Home");
-  var height = window.innerHeight;
-  var width = window.innerWidth;
-  home.style.height = height + 'px';
- }
+
 
 var delay = (function(){
   var timer = 0;
@@ -34,7 +31,6 @@ var delay = (function(){
     timer = setTimeout(callback, ms);
   };
 })();
-
 
 var opacity = 0;
 function logodelay(){
@@ -49,8 +45,7 @@ function logodelay(){
   };
 
   setTimeout(function(){document.getElementById('welcome').style.display = 'none';},2000);
+  setTimeout(function(){document.getElementById('footer').style.height = '30px';},2000);
 }
-
-
 
 delay(function(){logodelay()},500);
