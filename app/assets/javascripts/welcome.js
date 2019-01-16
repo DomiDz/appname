@@ -36,16 +36,16 @@ var opacity = 0;
 function logodelay(){
   if (opacity < 10) {
     opacity += 1;
-    setTimeout(function(){logodelay()},50);
+    setTimeout(function(){logodelay();},50);
   }
   document.getElementById('logo_start').style.opacity = opacity / 10;
 
   if (opacity == 10){
     setTimeout(function(){document.getElementById('Home').scrollIntoView({behavior: 'smooth'});},1000);
-  };
+  }
 
   setTimeout(function(){document.getElementById('welcome').style.display = 'none';},2000);
   setTimeout(function(){document.getElementById('footer').style.height = '30px';},2000);
 }
 
-delay(function(){logodelay()},500);
+delay(function(){logodelay();},500);
