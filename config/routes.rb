@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   get 'simple_pages/kontakt'
   get 'simple_pages/impressum'
   get 'simple_pages/photography'
