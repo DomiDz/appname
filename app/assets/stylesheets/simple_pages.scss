@@ -125,7 +125,7 @@ h1 { text-transform:uppercase;
   }
 }
 
-body{background-color: #fcf7f1;}
+body{background-color: #fcf7f1; overflow-y: hidden;}
 
 
 h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
@@ -149,7 +149,7 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
 
 .nav {display: block !important;}
 
-#Home {position: relative; z-index: 1; height: 100vh; width: 100vw; 
+#Home {position: relative; z-index: 1; height: 100vh; width: 100vw;
 @include phone{ height: 100vh !important;}
 }
 
@@ -215,7 +215,7 @@ h1 {margin-left: 30px; margin-top: 30px;
 
 
 
-footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2; background-color: #fcf7f1;
+footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2; background-color: #fcf7f1; right: 0px;
   #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px; :hover{color: white;}
     @include phone {width: 90vw; height: 15px; text-align: center;}
     }//mediaquery
