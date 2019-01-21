@@ -1,3 +1,21 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{ margin: 3% 2%; max-width: 96vw;}
+
+.img-cont{ height: 180px; overflow: hidden; margin-top: 5%;
+.img {width: 100%;}
+}
+
+h1{ overflow: hidden;}
+
+.product-img {position: absolute; bottom: 3em;} 
+
+.headline {margin-top: 10em; }
+.product-desc {margin-top: 1em;}
+.product-location { margin-top: 33px;}
+
+.main {padding-left: unset;}
+
+.overall {padding-bottom: 1em; border-bottom: 1px solid;}
