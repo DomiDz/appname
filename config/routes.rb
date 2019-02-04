@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "simple_pages#landing_page"
+  # root "simple_pages#landing_page"
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :products
   get 'simple_pages/kontakt'

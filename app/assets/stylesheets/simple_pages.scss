@@ -117,6 +117,21 @@ $translateX: 0;
   }
 }
 
+// Hover effect Product / Photo
+
+#productbtn:hover { 
+  .productbtn { bottom: 60%;}
+  .product-design{height: 60%;}
+}
+
+#photobtn:hover{ 
+  .photobtn { bottom: 60%;}
+  .photography{height: 60%;}
+}
+
+.photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s;}
+
+
 #logo_start {@include phone {height: 300px !important;}}
 
 h1 { text-transform:uppercase;
@@ -153,7 +168,6 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
 @include phone{ height: 100vh !important;}
 }
 
-.photobtn, .photography {transition: height 0.6s,bottom 0.6s;}
 
 .myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 47%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;
   @include tablet-landscape{margin-left: 65px; width: calc(50vw - 80px); height: 47%;}

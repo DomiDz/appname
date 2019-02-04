@@ -9,22 +9,31 @@
 <div id="Home">
   <div class="myphoto">
   </div>
-  <div id='productbtn'>
-    <div class="productbtn">
-      <h1>Product Design</h1>
+  <%= link_to simple_pages_products_path do%>
+    <div id='productbtn'> <%# Hover effect hier einbauen%>
+      <div class="productbtn">
+        <h1>Product Design</h1>
+      </div>
+      <div class="product-design">
+      </div>
     </div>
-    <div class="product-design">
-    </div>
-  </div>
+  <%end%>
+
+<div id='test'>
+
   <div class="mydescription">
     <h2 class='name'>Dominik Dziamski</h2>
     <h3 class='name'>Interior Design | Multimedia Art</h3>
   </div>
-  <div id='photobtn'>
-    <div class="photobtn">
-      <h1>Photography</h1>
+
+  <%= link_to simple_pages_photography_path do%>
+    <div id='photobtn'>  <%# Hover effect hier einbauen%>
+      <div class="photobtn">
+        <h1>Photography</h1>
+      </div>
+      <div class="photography">
+      </div>
     </div>
-    <div class="photography">
-    </div>
-  </div>
+  <% end %>
 </div>
+
