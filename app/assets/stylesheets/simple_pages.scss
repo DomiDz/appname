@@ -40,6 +40,7 @@
 $color: #ececec;
 $ndcolor: #4b7d8d;
 
+
 $height-icon: 20px;
 $width-line: 35px;
 $height-line: 4px;
@@ -104,6 +105,7 @@ $translateX: 0;
       transform: translateY($translateY) translateX($translateX) rotate($rotation);
       -webkit-transform: translateY($translateY) translateX($translateX) rotate($rotation);
       -moz-transform: translateY($translateY) translateX($translateX) rotate($rotation);
+      @include phone { background: $color;}
     }
     .line-2 {
       opacity:0;
@@ -113,6 +115,7 @@ $translateX: 0;
       transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
       -webkit-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
       -moz-transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      @include phone { background: $color;}
     }
   }
 }
@@ -120,16 +123,20 @@ $translateX: 0;
 // Hover effect Product / Photo
 
 #productbtn:hover { 
-  .productbtn { bottom: 60%;}
+  .productbtn { bottom: 60%; background-color: #fcf7f1;
+    h1 {color: #887762 !important;}
+    }
   .product-design{height: 60%;}
 }
 
 #photobtn:hover{ 
-  .photobtn { bottom: 60%;}
+  .photobtn { bottom: 60%; background-color: #fcf7f1;
+  h1 {color: #4b7d8d !important;}
+  }
   .photography{height: 60%;}
 }
 
-.photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s;}
+.photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s,background-color 0.6s;}
 
 
 #logo_start {@include phone {height: 300px !important;}}
@@ -154,13 +161,20 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
     li{ display: inline; margin-left: 10px; :hover{text-decoration: none; color: #887762; }
       a{@extend %text-standard; 
         @include tablet-landscape {font-size: 16px;}
+        @include phone {font-size: 20px; color: #ececec; margin-left: -55px;}
       }
-      @include phone {display: block;}
+      @include phone {display: block; margin-top: 20%; margin-left: 50%;}
     }
   }
   @include tablet-landscape { top: 21px; margin-right: 65px;}  
 }
 
+#nav { @include phone {    position: fixed;
+  background-color: rgba(0,0,0,0.87);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;}}
 
 .nav {display: block !important;}
 
@@ -172,31 +186,37 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
 .myphoto { position: absolute; bottom: calc(30% + 100px); margin-left: 100px; width: calc(50vw - 150px); height: 47%; z-index: 4; background-image: image-url("DD.png"); background-size: cover;
   @include tablet-landscape{margin-left: 65px; width: calc(50vw - 80px); height: 47%;}
   @include tablet-portrait {bottom: calc(30% + 80px);}
-  @include phone{width: 139vw; top: 75px; height: 53%; bottom: 46%; margin-left: unset; left: -33%;  }
+  @include phone{width: 133vw; top: 0px; height: 64%; bottom: 46%; margin-left: unset; left: -33%;  }
 }//mediaquery
 
 
 .mydescription { position: absolute; bottom: calc(30% + 100px);right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 47%; z-index: 4; background-image: image-url("background-pattern.png");//mediaquery
-h2 { margin-top: 20%; margin-right: 10%; float: right; 
+h2 { margin-top: 25%; margin-right: 10%; float: right; 
   @include tablet-landscape{  text-align: right; margin-top: 18%; font-size: 20px;}
   @include tablet-portrait{}
-  @include phone {margin-top: 9%; font-size: 12pt;}
+  @include phone {margin-top: -5%; font-size: 12pt;}
   }//<-  mydescription h2
 h3 {float: right; margin-right: 10%; margin-left: 143px; 
   @include tablet-landscape{font-size: 14.9px;}
   @include tablet-portrait{margin-left: unset; width: 128px; line-height: 1.3; font-size: 14.9px;}
   @include phone {font-size: 16px; line-height: unset; width: unset;}
   }//<- mydescription h3
+.desc-text {
+  position: absolute; margin: 43% 9%; color: #ececec; text-decoration: none;
+}//<- Text
+.desc-text {
+  @include phone { margin: unset; margin-top: 6%; margin-right: 10%;}
+}
 @include tablet-landscape {margin-right:65px; width: calc(50vw - 80px); height: 47%;}//<- mydescription
 @include tablet-portrait {bottom: calc(30% + 80px);}
-@include phone {width: 80%; background-image: unset; height: unset; top: 45%; margin-right: unset;}
+@include phone {width: 80%; background-image: unset; height: unset; bottom: 50%; margin-right: unset;}
 }
 
 .productbtn{@extend %btn; left: 0;background-color: #887762;
   h1 {float: right; margin-right: 30px; margin-top: 30px;
     @include tablet-landscape {font-size: 28pt;}
     @include tablet-portrait{font-size: 20px;}
-    @include phone{font-size: 16px; text-align: right; margin-top: 19%;}
+    @include phone{font-size: 16px; text-align: right; margin-top: 9%;}
   }//mediaquery
   @include tablet-landscape{width: calc(50vw - 15px)}
   @include tablet-portrait{height: 80px;}
@@ -210,7 +230,7 @@ h3 {float: right; margin-right: 10%; margin-left: 143px;
   h1 {margin-left: 30px; margin-top: 30px;
     @include tablet-landscape {font-size: 28pt;}
     @include tablet-portrait{font-size: 20px;}  
-    @include phone{font-size: 16px; text-align: left; margin-top: 18%;}
+    @include phone{font-size: 16px; text-align: left; margin-top: 9%;}
     }//mediaquery
   @include tablet-landscape{width: calc(50vw - 15px)}
   @include tablet-portrait{height: 80px;}
@@ -230,18 +250,18 @@ h3 {float: right; margin-right: 10%; margin-left: 143px;
 
 
 footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2; background-color: #fcf7f1; right: 0px;
-  #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px; :hover{color: white;}
+  #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px !important; :hover{color: white;}
     @include phone {width: 90vw; height: 15px; text-align: center;}
     }//mediaquery
   p{@extend %footer-standard; right:100px; color:#0b1215; font-size: 15px; margin-bottom: -4px;
     @include tablet-landscape(){right: 65px;}
   }//mediaquery
-  #impressum {margin-left: 100px; color: #0b1215;
-    @include tablet-landscape{margin-left: 65px;}
+  .impressum {margin-left: 100px !important;
+    @include tablet-landscape{margin-left: 65px !important;}
     @include phone {text-align: center;}
   }
     :hover{text-decoration: none;  }//mediaquery
-    @include phone{height: 75px !important; position: unset; }
+    // @include phone{height: 75px !important; }
 }
 
 
