@@ -147,7 +147,9 @@ h1 { text-transform:uppercase;
   }
 }
 
-body{background-color: #fcf7f1;}
+body{background-color: #fcf7f1;
+// @include phone {height: calc(100vh + 150px);}
+}
 
 
 h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
@@ -205,7 +207,7 @@ h3 {float: right; margin-right: 10%; margin-left: 143px;
   position: absolute; margin: 43% 9%; color: #ececec; text-decoration: none;
 }//<- Text
 .desc-text {
-  @include phone { margin: unset; margin-top: 6%; margin-right: 10%;}
+  @include phone { display: none;}
 }
 @include tablet-landscape {margin-right:65px; width: calc(50vw - 80px); height: 47%;}//<- mydescription
 @include tablet-portrait {bottom: calc(30% + 80px);}
@@ -239,12 +241,12 @@ h3 {float: right; margin-right: 10%; margin-left: 143px;
 
 .product-design{position: absolute; bottom: 30px; margin-left: 100px; width: calc(50vw - 150px); height: 30%; z-index: 5; background-image: image-url("back-product.png"); background-size: cover;
   @include tablet-landscape{width: calc(50vw - 80px); margin-left: 65px;}
-  @include phone {width: 50vw; margin-left: unset;}
+  @include phone {width: 50vw; margin-left: unset; bottom: 0;}
 }//mediaquery
 
 .photography{position: absolute; bottom: 30px;right: 0; margin-right: 100px; width: calc(50vw - 150px); height: 30%; background-image: image-url("back-photo.png"); background-size: cover; z-index: 5;
   @include tablet-landscape{width: calc(50vw - 80px); margin-right: 65px;}
-  @include phone {width: 50vw; margin-right: unset;}
+  @include phone {width: 50vw; margin-right: unset; bottom: 0;}
 }//mediaquery
 
 
@@ -260,8 +262,7 @@ footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid 
     @include tablet-landscape{margin-left: 65px !important;}
     @include phone {text-align: center;}
   }
-    :hover{text-decoration: none;  }//mediaquery
+    :hover {text-decoration: none;}//mediaquery
     // @include phone{height: 75px !important; }
+    @include phone {display: none;}
 }
-
-
