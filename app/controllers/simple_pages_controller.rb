@@ -3,8 +3,14 @@ class SimplePagesController < ApplicationController
   end
 end
 
-# class SimplePagesController < ApplicationController
-#   def landing_page
-#     @featured_product = Product.first
-#   end
-# end
+class SimplePagesController < ApplicationController
+  def landing_page
+    @products = Product.limit(3)
+  end
+end
+
+class SimplePagesController < ApplicationController
+  def photography 
+    @products = Product.limit(3)
+  end
+end
