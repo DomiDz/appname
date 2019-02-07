@@ -14,9 +14,3 @@ class SimplePagesController < ApplicationController
     @products = Product.limit(3)
   end
 end
-
-class SimplePagesController < ApplicationController
-  def products
-    @orders = Order.all
-  end
-end
