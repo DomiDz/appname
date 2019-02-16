@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   
     def show
         @order = Order.find(params[:id])
+        @orders = Order.includes(:product).all
     end
   
     def new
