@@ -3,7 +3,7 @@
 
 <div class="row ordersdiv">
   <% @orders.each do |order| %>
-    <div class="col-sm">
+    <div class="col-sm-4 orders-item">
       <h1>
         Order # <%= order.id %>:
         <%= link_to order.product.name, order %>

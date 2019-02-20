@@ -17,6 +17,6 @@ end
 
 class SimplePagesController < ApplicationController
   def products
-    @orders = Order.all
+    redirect_to "/simple_pages/photography"
   end
 end
