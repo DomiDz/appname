@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 @mixin phone {
   @media (max-width: 768px) { @content; }
 }
@@ -121,23 +122,23 @@ $translateX: 0;
 }
 
 // Hover effect Product / Photo
-
-#productbtn:hover { 
-  .productbtn { bottom: 60%; background-color: #fcf7f1;
-    h1 {color: #887762 !important;}
+@media (min-width: 769px){
+    #productbtn:hover { 
+      .productbtn { bottom: 60%; background-color: #fcf7f1;
+        h1 {color: #887762 !important;}
+      }
+      .product-design{height: 60%;}
     }
-  .product-design{height: 60%;}
+
+    #photobtn:hover{ 
+      .photobtn { bottom: 60%; background-color: #fcf7f1;
+      h1 {color: #4b7d8d !important;}
+      }
+      .photography{height: 60%;}
+    }
+
+    .photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s,background-color 0.6s;}
 }
-
-#photobtn:hover{ 
-  .photobtn { bottom: 60%; background-color: #fcf7f1;
-  h1 {color: #4b7d8d !important;}
-  }
-  .photography{height: 60%;}
-}
-
-.photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s,background-color 0.6s;}
-
 
 #logo_start {@include phone {height: 300px !important;}}
 
