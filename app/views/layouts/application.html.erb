@@ -18,9 +18,14 @@
   <body data-spy="scroll" data-target=".navbar">
     <nav class='navbar'>
       <ul id='nav'>
+        <li class='search-form'><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <%= form.text_field :q, id: 'q', value: params[:q] %>
+              <%= form.submit 'Search' %>
+            <% end %></li>
         <li><%= link_to "for senses_", simple_pages_index_path %></li>
         <li><%= link_to "Product Design", simple_pages_products_path %></li>
         <li><%= link_to "Photography", simple_pages_photography_path %></li>
+        
       </ul>
       <a id="hamburger-icon" href="#" title="Menu" >
         <span class="line line-1"></span>
@@ -28,6 +33,7 @@
         <span class="line line-3"></span>
       </a>
     </nav>
+  
     <%= yield %>
     <footer id='footer'>
         <%= link_to 'Impressum', simple_pages_impressum_path,  :id => 'a', :class=> 'impressum'%>

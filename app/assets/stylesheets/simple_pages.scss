@@ -181,6 +181,10 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
 
 .nav {display: block !important;}
 
+.search-form{float: right; margin-left: 40px;}
+
+.header{ margin-left: 100px;}
+
 #Home {position: relative; z-index: 1; height: 100vh; width: 100vw;
 @include phone{ height: 100vh !important;}
 }
@@ -250,7 +254,7 @@ h3 {float: right; margin-right: 10%; margin-left: 143px;
   @include phone {width: 50vw; margin-right: unset; bottom: 0;}
 }//mediaquery
 
-
+.back{ margin-left: 100px;}
 
 footer {@extend %footer-standard; width: 100vw; height: 30px; border-top: solid .5px; border-color: #0b1215; z-index: 2; background-color: #fcf7f1; right: 0px;
   #a{@extend %footer-standard; position: unset; text-decoration: unset; color: #0b1215; margin-left: 30px; font-size: 15px !important; :hover{color: white;}

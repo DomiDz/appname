@@ -1,4 +1,6 @@
-<%= form_with(model: product, local: true) do |form| %>
+<%= javascript_include_tag('home.js') %>
+
+<%= form_with(model: product, local: true, class: 'hole-form') do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -12,31 +14,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: 'test' %>
+    <%= form.text_field :name, class: 'test-field col-sm-8' %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: 'test' %>
+    <%= form.text_area :description, class: 'test-field col-sm-8' %>
   </div>
 
   <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.label :image_url, class: 'test' %>
+    <%= form.text_field :image_url, class: 'test-field col-sm-8' %>
   </div>
 
   <div class="field">
-    <%=form.label :location %>
-    <%=form. text_field :location %>
+    <%=form.label :location, class: 'test' %>
+    <%=form. text_field :location, class: 'test-field col-sm-8' %>
   </div> 
 
   <div class="field">
-    <%=form.label :price %>
-    <%=form.text_field :price %>
+    <%=form.label :price, class: 'test' %>
+    <%=form.text_field :price, class: 'test-field col-sm-8' %>
   </div>
 
-  <div class="actions">
+  <div class="actions submit-btn">
     <%= form.submit %>
   </div>
 
