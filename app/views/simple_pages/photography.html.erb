@@ -27,3 +27,12 @@
     </div>
   </section>
 
+<section class='product-list'>
+   <div class="row">
+  <% if @products %>
+  <% @products.each do |product| %>
+       <%= render partial: "shared/product", locals: {product: product} %>
+  <%end%>
+  <%end%>
+  </div>
+</section>

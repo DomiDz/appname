@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<%= javascript_include_tag('home.js') %>
+<section class='product-body'>
+<div class='center'>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -10,51 +11,14 @@
   <%= @product.description %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+<%= image_tag(@product.image_url, :class => 'preview-img')%>
+<% if (@product.location != nil) %>
+<p class='p'>
   <strong>Location:</strong>
-  <%=@product.location %>
+  <%=@product.location%>
 </p>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<% end%>
+<%= link_to 'Go to Overview', products_path %>
 
-
-<%# <div class='container'>
-  <div class='row overall'>
-    <div class='col-sm-12 col-md-6 col-lg-6 main'>
-      <a href="#"><img src='https://images.unsplash.com/photo-1545852528-fa22f7fcd63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60	' alt='#' class="img"></a>
-    </div>
-    <div class='col-sm-12 col-md-6 col-lg-6'>
-      <div class='row headline'>
-        <div class='col-sm-12 col-md-8 product-title'>
-          <h1>Title</h1>
-        </div>
-        <div class='col-sm-12 col-md-4 product-location'>
-          <h3>Location</h3>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-sm-12 col-md-12 col-lg-12 product-desc'>
-          <p>Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. </p>
-        </div>
-      </div>
-      <div class='row product-img row'>
-        <div class='col-sm-6 col-md-3 col-lg-3'>
-          <a href="#"><img src='https://images.unsplash.com/photo-1545852528-fa22f7fcd63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' alt='#' class="img"></a>
-        </div>
-        <div class='col-sm-6 col-md-3 col-lg-3'>
-          <a href="#"><img src='https://images.unsplash.com/photo-1545852528-fa22f7fcd63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' alt='#' class="img"></a>
-        </div>
-        <div class='col-sm-6 col-md-3 col-lg-3'>
-          <a href="#"><img src='https://images.unsplash.com/photo-1545852528-fa22f7fcd63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' alt='#' class="img"></a>
-        </div>
-        <div class='col-sm-6 col-md-3 col-lg-3'>
-          <a href="#"><img src='https://images.unsplash.com/photo-1545852528-fa22f7fcd63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' alt='#' class="img"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>%>
-
+</div>
+</section>
