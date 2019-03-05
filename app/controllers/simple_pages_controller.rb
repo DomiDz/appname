@@ -11,7 +11,7 @@ end
 
 class SimplePagesController < ApplicationController
   def photography 
-    @products = Product.limit(3)
+    @products = Product.all
   end
 end
 
