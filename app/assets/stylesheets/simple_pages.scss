@@ -187,7 +187,10 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
   top: 0;
   left: 0;}}
 
-
+.nav-link {
+  padding: unset;
+  display: unset;
+}
 .search-form{float: right; margin-right: 80px;
 @include phone { position: absolute; margin-left: 25%;}
 }

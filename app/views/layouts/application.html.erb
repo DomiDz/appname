@@ -16,6 +16,8 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar">
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <nav class='navbar'>
       <ul id='nav'>
         <li class='search-form'><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
@@ -25,8 +27,18 @@
         <li class='first-li'><%= link_to "for senses_", simple_pages_index_path%></li>
         <li><%= link_to "Product Design", simple_pages_products_path %></li>
         <li><%= link_to "Photography", simple_pages_photography_path %></li>
-        
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+        </li>
+        <% end %>
+        </li>
       </ul>
+  
       <a id="hamburger-icon" href="#" title="Menu" >
         <span class="line line-1"></span>
         <span class="line line-2"></span>
