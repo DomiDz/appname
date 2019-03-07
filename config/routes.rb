@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
+  
 # root "simple_pages#landing_page"
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :products
