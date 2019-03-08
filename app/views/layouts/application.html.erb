@@ -16,7 +16,9 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar">
-  <p class="notice"><%= notice %></p>
+  <%if notice%>
+  <p class="notice" class="alert alert-primary"><%= notice %></p>
+  <%end%>
        <p class="alert"><%= alert %></p>
     <nav class='navbar'>
       <ul id='nav'>
