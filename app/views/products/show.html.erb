@@ -1,24 +1,53 @@
-<%= javascript_include_tag('home.js') %>
-<section class='product-body'>
-<div class='center'>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
 
-<%= image_tag(@product.image_url, :class => 'preview-img')%>
-<% if (@product.location != nil) %>
-<p class='p'>
-  <strong>Location:</strong>
-  <%=@product.location%>
-</p>
-<% end%>
-<%= link_to 'Go to Overview', products_path %>
 
-</div>
+<%= javascript_include_tag('home.js')%>
+<section class='product-body-2'>
+  <div class='center-2'>
+    <div class='row'> <%# row 1%>
+      <div class='col-sm-12 col-lg-6'> <%# row 1.1%>
+        <div class='row'> <%# row 2%>
+          <div class='col-sm-12'>
+          <%= image_tag(@product.image_url, :class => 'preview-img-2')%>
+          </div>
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-6'>
+              <%= image_tag(@product.image_url, :class => 'preview-img-3')%>
+              </div>
+              <div class='col-sm-6'>
+              <%= image_tag(@product.image_url, :class => 'preview-img-3')%>
+              </div>
+            </div>
+          </div>
+        </div> <%# close row 2%>
+      </div> <%# close row 1.1%>
+      <div class='col-sm-12 col-lg-6'><%# row 1.2%>
+        <div class='row'> <%# row 2%>
+          <h1 class='product-name col-sm-12 col-lg-12'><%=@product.name%></h1>
+          <div class='rating-stars col-sm-6 col-lg-6'> 
+            <%# rating Stars%>
+          </div>
+          <div class='location col-sm-12 col-lg-12'>
+            <% if (@product.location != nil) %>
+              <p> 
+                <strong>Location:</strong>
+                <%= @product.location%>
+              </p>
+            <%end%>
+          </div>
+          <div class='product-description col-sm-12 col-lg-12'>
+            <h2>Description:</h2>
+            <%= @product.description %>
+          </div>
+          <div class='product-comment col-sm-12 col-lg-12'>
+            <h2>Comment</h2>
+            <%= @product.highest_rating_comment %>
+            <%= @product.lowest_rating_comment %>
+          </div>
+        </div>
+      </div>
+      
+    <%= link_to 'Go to Overview', products_path %>
+  </div>
 </section>
