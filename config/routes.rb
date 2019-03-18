@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users
+  resources :products do
+    resources :comments
+    end
 # root "simple_pages#landing_page"
   resources :orders, only: [:index, :show, :create, :destroy]
-  resources :products
   get 'simple_pages/kontakt'
   get 'simple_pages/impressum'
   get 'simple_pages/photography'

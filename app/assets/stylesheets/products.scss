@@ -61,7 +61,6 @@ h1{ overflow: hidden;}
 
 .product-name {
     position: relative;
-    margin-bottom: 50px;
 }
 
 .preview-img-3 {
@@ -81,7 +80,7 @@ h1{ overflow: hidden;}
 }
 
 .rating-stars {
-    height: 50px;
+    height: 20px;
     width: 100%;
     background-color: white;
     margin-bottom: 20px;
@@ -93,9 +92,14 @@ h1{ overflow: hidden;}
 }
 
 .product-comment {
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
 .location {
     margin-bottom: 20px;
+}
+
+.rating{
+    margin-bottom: 40px;
 }

@@ -49,3 +49,4 @@ function logodelay(){
 }
 
 delay(function(){logodelay();},500);
+

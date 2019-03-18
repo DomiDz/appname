@@ -155,9 +155,8 @@ body{background-color: #fcf7f1;
 
 h1 {font-size: 40pt; color: #ececec; @extend %h-standard;}
 h2 {@extend %text-standard; font-size: 23pt; color: #eccba7;} //mediaquery
-h3 {@extend %h-standard; font-size: 12.84pt; letter-spacing:0; color: #ececec} //mediaquery
-
-p {@extend %text-standard;}
+h3 {@extend %h-standard; font-size: 12.84pt; letter-spacing:0; color: #ececec} //mediaquerys
+h4 {@extend %text-standard;}
 
 nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2; padding: unset !important; //mediaquery
   ul{ float: left; display: none;
