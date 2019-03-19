@@ -14,7 +14,7 @@
 
 .product-reviews {
     height: 150px;
-    overflow: scroll;
+    overflow-y: scroll;
     scroll-behavior: smooth;
 }
 
@@ -46,4 +46,4 @@
         display: inline;
         margin-right: 20px;
     }
-}
+}exit

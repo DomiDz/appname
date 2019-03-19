@@ -42,6 +42,7 @@
               </div>
             </div> 
             <%= render 'comments'%>
+            <%= will_paginate @comments %>
             <%#= @product.highest_rating_comment %>
             <%#= @product.lowest_rating_comment %>
             <%#= @product.comments%>

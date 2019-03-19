@@ -18,3 +18,7 @@ class Product < ApplicationRecord
         comments.average(:rating).to_f
       end
     end
+
+class Product < ApplicationRecord
+  validates :name, presence: true
+end
