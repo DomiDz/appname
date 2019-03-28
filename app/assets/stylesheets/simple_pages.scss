@@ -124,17 +124,17 @@ $translateX: 0;
 // Hover effect Product / Photo
 @media (min-width: 769px){
     #productbtn:hover { 
-      .productbtn { bottom: 60%; background-color: #fcf7f1;
+      .productbtn { bottom: 80%; background-color: #fcf7f1;
         h1 {color: #887762 !important;}
       }
-      .product-design{height: 60%;}
+      .product-design{height: 80%;}
     }
 
     #photobtn:hover{ 
-      .photobtn { bottom: 60%; background-color: #fcf7f1;
+      .photobtn { bottom: 80%; background-color: #fcf7f1;
       h1 {color: #4b7d8d !important;}
       }
-      .photography{height: 60%;}
+      .photography{height: 80%;}
     }
 
     .photobtn, .photography, .product-design, .productbtn, .name {transition: height 0.6s,bottom 0.6s,background-color 0.6s;}
@@ -158,9 +158,9 @@ h2 {@extend %text-standard; font-size: 23pt; color: #eccba7;} //mediaquery
 h3 {@extend %h-standard; font-size: 12.84pt; letter-spacing:0; color: #ececec} //mediaquerys
 h4 {@extend %text-standard;}
 
-nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2; padding: unset !important; //mediaquery
+nav { position: fixed; top: 32px; float: right; z-index: 2; padding: unset !important; //mediaquery
   ul{ float: left; display: none;
-    li{ display: inline; margin-left: 10px; :hover{text-decoration: none; color: #887762; }
+    li{ display: inline; margin-left: 40px; :hover{text-decoration: none; color: #887762; }
       a{@extend %text-standard; 
         @include tablet-landscape {font-size: 16px;}
         @include phone {font-size: 20px; color: #ececec; margin-left: -55px;}
@@ -175,8 +175,19 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
   @include phone {margin-top: 170px !important; }
 }
 
-.alert {margin: unset!important; padding: unset; position:absolute; top: 15px;}
-.notice{margin: unset!important; padding: unset; position:absolute; top: 15px;}
+.notice .alert {padding: unset; top: 15px; margin-top: 15px;}
+
+.notice-alert {
+  position: absolute;
+  background-color: rgba(0,0,0,0.2);
+  width: 60vw;
+  height: 50px;
+  margin: 0 20vw;
+  top: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
 .navbar {
   position: absolute;
   right: 100px;
@@ -192,8 +203,22 @@ nav { position: fixed; top: 32px; float: right; margin-right: 100px; z-index: 2;
   padding: unset;
   display: unset;
 }
-.search-form{float: right; margin-right: 80px;
+.search-form{float: right; margin:0 40px; background-color: none;
 @include phone { position: absolute; margin-left: 25%;}
+}
+
+.searchbox {     
+  background-color: rgba(0,0,0,0);
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #666666;
+}
+
+.searchbtn {
+  @extend %text-standard;
+  background-color: rgba(0,0,0,0);
+  border-style: none;
+  color: #666666;
 }
 
 .header{ margin-left: 100px;}

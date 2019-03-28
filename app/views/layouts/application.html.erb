@@ -16,27 +16,38 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar">
-  <%if notice%>
-  <p class="notice" class="alert alert-primary"><%= notice %></p>
+
+  <%if notice %>
+  <div class='notice-alert'>
+  <p class="notice" class="alert alert-primary"><br><%= notice %></p>
+  </div>
   <%end%>
+  <%if alert %>
+  <div class='notice-alert'>
+  <p class="notice" class="alert alert-primary"><br><%= alert %></p>
+  </div>
+  <%end%>
+
     <nav class='navbar'>
       <ul id='nav'>
-        <li class='search-form'><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.text_field :q, id: 'q', value: params[:q] %>
-              <%= form.submit 'Search' %>
-            <% end %></li>
+      <!-- Search form -->
+        
         <li class='first-li'><%= link_to "for senses_", simple_pages_index_path%></li>
         <li><%= link_to "Product Design", simple_pages_products_path %></li>
         <li><%= link_to "Photography", simple_pages_photography_path %></li>
         <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-        </li>
+          <li class="nav-item">
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+          </li>
         <% end %>
+        <li class='search-form'><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+          <%= form.submit 'Search',:class => 'searchbtn' %>
+          <%= form.text_field :q, id: 'q', value: params[:q],:class => 'searchbox' %>
+        <% end %></li>
         </li>
       </ul>
   
