@@ -9,12 +9,13 @@ describe Product do
             product.comments.create!(rating: 3, user: user, body: 'awesome')
             product.comments.create!(rating: 5, user: user, body: 'awesome')
         end
+        
         it 'returns the average rating of all comments' do 
             expect(product.average_rating).to eq 3
         end
     end
 
-    
+
     context 'when creating product' do 
 
         it 'is not valid without a Name' do
