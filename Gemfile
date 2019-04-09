@@ -81,5 +81,5 @@ end
 #rails-controller-testing
 gem 'rails-controller-testing'
 
-
+gem 'stripe'
 

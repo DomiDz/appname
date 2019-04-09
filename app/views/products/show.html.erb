@@ -33,10 +33,14 @@
               <h4> Location: <%= @product.location%></h4>
             <%end%>
           </div>
+          
           <div class='product-description col-sm-12 col-lg-12'>
             <h4>Description:</h4>
             <%= @product.description %>
           </div>
+          <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
           <div class='product-comment col-sm-12 col-lg-12'>
             <div> 
               <div class='row'>
@@ -49,6 +53,7 @@
             <%#= @product.lowest_rating_comment %>
             <%#= @product.comments%>
           </div>
+          
           <div class='new_comment col-sm-12'>
             <%= render 'new_comment'%>
           </div>
