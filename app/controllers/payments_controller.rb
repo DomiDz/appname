@@ -28,7 +28,7 @@ before_action :authenticate_user!
           flash[:error] = 'Unfortunately, there was an error with your purchase: #{err[:message]}'
         end
 
-        redirect_to @product
+        redirect_to '/simple_pages/photography'
 
       end
 
