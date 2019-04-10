@@ -5,7 +5,11 @@
 <section class='product-body-2'>
    
   <div class='center-2'>
-    
+    <%if notice %>
+  <div class='notice-alert'>
+  <p class="notice" class="alert alert-primary"><br><%= notice %></p>
+  </div>
+  <%end%>
     <div class='row'> <%# row 1%>
       <div class='col-sm-12 col-lg-6'> <%# row 1.1%>
         <div class='row'> <%# row 2%>
@@ -40,6 +44,7 @@
           </div>
           <%= form_with(url: '/payments/create') do |form| %>
             <%= render partial: "shared/stripe_checkout_button" %>
+            <%= hidden_field_tag(:product_id, @product.id) %>
           <% end %>
           <div class='product-comment col-sm-12 col-lg-12'>
             <div> 
