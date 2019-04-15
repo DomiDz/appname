@@ -83,3 +83,10 @@ gem 'rails-controller-testing'
 
 gem 'stripe'
 
+if !Rails.env.production?
+gem 'byebug'
+end
+
+# for byebug 
+
+gem 'rb-readline'

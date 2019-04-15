@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q]
+      byebug
       search_term = params[:q]
       @products = Product.search(search_term)
     else
@@ -14,10 +15,14 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   # GET /products/1.json
+  
   def show
+    byebug
     @products = Product.all
     @comments = @product.comments.paginate(page: params[:page], per_page: 4).order("created_at DESC")
+    logger.debug "### Count of Products #{@products.count} ###"
   end
+  
 
   # GET /products/new
   def new
