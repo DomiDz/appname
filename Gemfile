@@ -83,7 +83,7 @@ gem 'rails-controller-testing'
 
 gem 'stripe'
 
-if !Rails.env.production?
+group :development do
 gem 'byebug'
 end
 
