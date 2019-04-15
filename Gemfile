@@ -90,3 +90,5 @@ end
 # for byebug 
 
 gem 'rb-readline'
+
+gem "brakeman"
