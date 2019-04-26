@@ -31,7 +31,7 @@
       <div class='col-sm-12 col-lg-6'><%# row 1.2%>
         <div class='row'> <%# row 2%>
           <h1 class='product-name col-sm-12 col-lg-12'><%=@product.name%></h1>
-            <div class='rated col-sm-3 col-lg-3' data-score="<%= @product.average_rating %>"><p>Average:</p></div>
+            <div class='rated col-sm-3 col-lg-3' id='average_rating' data-score="<%= @product.average_rating %>"><p>Average:</p></div>
           <div class='location col-sm-12 col-lg-12'>
             <% if (@product.location != nil) %>
               <h4> Location: <%= @product.location%></h4>
