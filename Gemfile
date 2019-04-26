@@ -92,3 +92,5 @@ end
 gem 'rb-readline'
 
 gem "brakeman"
+
+gem 'dalli'
