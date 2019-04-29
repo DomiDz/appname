@@ -83,9 +83,11 @@ gem 'rails-controller-testing'
 
 gem 'stripe'
 
+=begin
 group :development do
 gem 'byebug'
 end
+=end
 
 # for byebug 
 
