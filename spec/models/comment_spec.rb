@@ -1,1 +1,31 @@
 require 'rails_helper'
+
+describe Comment do
+    context "comment validation" do
+
+        it "comment is invalid without a body" do
+            @comment = FactoryBot.build(:comment, body: nil)
+            expect(@comment).not_to be_valid
+        end
+
+        it "comment is invalid without a user" do
+            @comment = FactoryBot.build(:comment, user_id: nil)
+            expect(@comment).not_to be_valid
+        end
+
+        it "comment is invalid without a product" do
+            @comment = FactoryBot.build(:comment, product: nil)
+            expect(@comment).not_to be_valid
+        end
+
+        it "comment is invalid without a rating" do
+            @comment = FactoryBot.build(:comment, rating: nil)
+            expect(@comment).not_to be_valid
+        end
+
+        it "comment is invalid if rating is not integer" do
+            @comment = FactoryBot.build(:comment, rating: "five")
+            expect(@comment).not_to be_valid
+        end
+    end
+end

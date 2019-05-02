@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
 =end 
     @products = Product.all
     @comments = @product.comments.paginate(page: params[:page], per_page: 4).order("created_at DESC")
-    logger.debug "### Count of Products #{@products.count} ###"
+    #logger.debug "### Count of Products #{@products.count} ###"
   end
   
 
