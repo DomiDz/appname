@@ -8,6 +8,15 @@ class UserMailer < ApplicationMailer
          subject: "A new contact form message from #{name}")
   end
 
+  def order_received_email(email, name, order)
+		@name = name
+		@order = order
+		mail(
+			from: "mail@d-dziamski.de",
+			to: email,
+			subject: "Thank you for your purchase!")
+	end
+
   def welcome(user)
     @appname = "for Senses"
     mail(to: user.email,
